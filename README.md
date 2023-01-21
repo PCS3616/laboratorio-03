@@ -20,36 +20,19 @@ sudo gem install byebug --no-document
 sudo gem install paint --no-document
 ```
 
-Instalação do simulador e corretor:
+Esse repositorio também já conta com o simulador e 
+gerador de imagens de maquina de turing, `turingmachine` e `tm_to_dot.rb` 
+respectivament:
+
+
+# Gerando diagrama da Máquina de Turing:
 
 ```bash
-mkdir -p \~/Documents/pcs3616
-cd \~/Documents/pcs3616
-
-mkdir aula3
-wget https://github.com/MiguelSarraf/pcs3616/archive/aula3.zip
-unzip aula3.zip
-
-rm aula3.zip
-
-mv pcs3616-aula3/* aula3/
-
-rmdir pcs3616-aula3
-
-cd aula3/
-mkdir mts
-mkdir svgs
-mkdir dots
+ruby tm_to_dot.rb submission/sua_maquina.txt \> submission/sua_maquina.dot && dot
+-Tsvg submission/sua_maquina.dot -o submission/sua_maquina.svg
 ```
 
-Gerando diagrama da Máquina de Turing:
-
-```bash
-ruby tm_to_dot.rb mts/sua_maquina.txt \> dots/sua_maquina.dot && dot
--Tsvg dots/sua_maquina.dot -o svgs/sua_maquina.svg
-```
-
-Testar um caso:
+# Testar um caso:
 
 ```bash
 #Entra em um terminal Python
@@ -57,13 +40,15 @@ Testar um caso:
 python3
 #Importa a biblioteca
 from turingmachine import *
+
 #Carrega a sua maquina
-load("mts/sua_maquina.txt")
+load("submission/sua_maquina.txt")
+
 #Executa um teste
 run("string com fita de entrada")
 ```
 
-Roda o testador padrão:
+# Roda o testador padrão:
 
 ```bash
 #Entra em um terminal Python
@@ -72,7 +57,7 @@ python3
 #Importa a biblioteca
 from turingmachine import *
 #Carrega a sua maquina
-load("mts/sua_maquina.txt")
+load("submission/sua_maquina.txt")
 #Testa os casos padrao
 test("inputs/arquivo_de_teste.in")
 ```
@@ -119,19 +104,18 @@ exemplos de execução para o exercício 1 estão em
 **inputs/ex1-soma.in**.
 
 - Tratamento de erros: nesta aula, isso significa que a sua MT, se
-receber entradas inválidas para processar, [não pode entrar em um
-loop infinito]{.underline}, e também não deve terminar em um
+receber entradas inválidas para processar, _não pode entrar em um
+loop infinito_, e também não deve terminar em um
 estado de aceitação (estado final). A máquina deve parar em
 qualquer estado que não seja final (você pode, inclusive, criar um
 estado só para casos de erro), e o conteúdo da fita pode ser
 qualquer coisa (para nós, o conteúdo não é relevante se a máquina
 deu erro).
 
-## 5. Enviar para o Sharif Judge **se estiver correto**:
+## 5. Enviar para o Github **se estiver correto**:
 
-Criar um arquivo zip com o arquivo da MT e o SVG do diagrama de
-transição, dar o nome correspondente ao exercício (e.g.,
-\"mt_soma.zip\") e enviar.
+Basta adicionar os arquivos da MT e o SVG do diagrama de
+transição e dar o `git push`.
 
 ## 6. Repetir para os demais exercícios.
 
