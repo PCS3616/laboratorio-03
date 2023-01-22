@@ -59,7 +59,7 @@ from turingmachine import *
 #Carrega a sua maquina
 load("submission/sua_maquina.txt")
 #Testa os casos padrao
-test("inputs/arquivo_de_teste.in")
+run_test("inputs/arquivo_de_teste.in")
 ```
 
 **ATENÇÃO**: "sua\_maquina.txt" não é um arquivo dentre os que você

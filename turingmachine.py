@@ -191,7 +191,7 @@ def run(string):
     if tm[0]==None: raise NoMachine("You must first load an machine.")
     return tm[0](string)
 
-def test(filepath):
+def run_test(filepath):
     '''Test all the cases in given file and return correctness percentage
     '''
     if not os.path.exists(filepath): raise BadFile(filepath+" does not exist.")

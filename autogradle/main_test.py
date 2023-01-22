@@ -1,7 +1,7 @@
 import pytest
 from pathlib import Path
 
-from turingmachine import load, test
+from turingmachine import load, run_test
 
 submission_path = Path("./submission")
 autogradle_path = Path("./autogradle")
@@ -18,7 +18,7 @@ def test_1():
     assert mt.exists(), "A submissão não contém o arquivo 'mt_soma.txt'"
 
     load(mt.as_posix())
-    test(mt_in.as_posix())
+    run_test(mt_in.as_posix())
 
 def test_2():
     img = submission_path / 'mt_subtracao.svg'
@@ -30,7 +30,7 @@ def test_2():
     assert mt.exists(), "A submissão não contém o arquivo 'mt_subtracao.txt'"
 
     load(mt.as_posix())
-    test(mt_in.as_posix())
+    run_test(mt_in.as_posix())
 
 def test_3():
     img = submission_path / 'mt_soma_binaria.svg'
@@ -42,4 +42,4 @@ def test_3():
     assert mt.exists(), "A submissão não contém o arquivo 'mt_soma_binaria.txt'"
 
     load(mt.as_posix())
-    test(mt_in.as_posix())
+    run_test(mt_in.as_posix())
