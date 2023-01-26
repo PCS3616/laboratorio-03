@@ -6,31 +6,10 @@ problemas, peça ajuda.
 |**Para colar um comando no terminal: Ctrl+Shift+V**|
 |---------------------------------------------------|
 
-Instalação do Graphviz e Ruby (vamos usar para gerar as máquinas de
-estado):
-
-```bash
-sudo apt-get update
-sudo apt-get install -y graphviz
-which dot # Saída esperada: /usr/bin/dot
-sudo apt-get install ruby-dev
-
-sudo gem install byebug --no-document
-
-sudo gem install paint --no-document
-```
-
-Esse repositorio também já conta com o simulador e 
+Esse repositorio já conta com o simulador e 
 gerador de imagens de maquina de turing, `turingmachine` e `tm_to_dot.rb` 
 respectivament:
 
-
-# Gerando diagrama da Máquina de Turing:
-
-```bash
-ruby tm_to_dot.rb submission/sua_maquina.txt \> submission/sua_maquina.dot && dot
--Tsvg submission/sua_maquina.dot -o submission/sua_maquina.svg
-```
 
 # Testar um caso:
 
@@ -141,3 +120,8 @@ q4 1 q5 # L   // q4 - penúltimo dígito de Y, escreve # e move para a esquerda
 q5 1 q5 1 L   // q5 - move para esquerda até o inicio da fita
 q5 $ q6 $ R   // q5 - início da fita, move para a direita e para
 end           // final da máquina
+```
+
+Você também pode usar o turing dataviz motificado pelo @guissalustiano 
+para gerar esse formato:
+[https://guissalustiano.github.io/turing-machine-viz/](https://guissalustiano.github.io/turing-machine-viz/)
