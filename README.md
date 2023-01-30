@@ -6,39 +6,34 @@ problemas, peça ajuda.
 |**Para colar um comando no terminal: Ctrl+Shift+V**|
 |---------------------------------------------------|
 
-Esse repositorio já conta com o simulador e 
-gerador de imagens de maquina de turing, `turingmachine` e `tm_to_dot.rb` 
-respectivament:
+Esse repositorio já conta com o simulador de maquina de turing,
+`turingmachine.py`.
 
 
 # Testar um caso:
 
+1. Entrar em um terminal Python
 ```bash
-#Entra em um terminal Python
-
 python3
-#Importa a biblioteca
-from turingmachine import *
-
-#Carrega a sua maquina
-load("submission/sua_maquina.txt")
-
-#Executa um teste
-run("string com fita de entrada")
+```
+2. Executar a MT sobre uma única fita de entrada
+```python
+>>> from turingmachine import *
+>>> load("submission/sua_maquina.txt")
+>>> run("string com fita de entrada")
 ```
 
 # Roda o testador padrão:
 
+1. Entrar em um terminal Python
 ```bash
-#Entra em um terminal Python
-
 python3
-#Importa a biblioteca
-from turingmachine import *
-#Carrega a sua maquina
-load("submission/sua_maquina.txt")
-#Testa os casos padrao
-run_test("inputs/arquivo_de_teste.in")
+```
+2. Executar a MT sobre o arquivo `.in`
+```python
+>>> from turingmachine import *
+>>> load("submission/sua_maquina.txt")
+>>> run_test("inputs/arquivo_de_teste.in")
 ```
 
 **ATENÇÃO**: "sua\_maquina.txt" não é um arquivo dentre os que você
@@ -91,10 +86,9 @@ estado só para casos de erro), e o conteúdo da fita pode ser
 qualquer coisa (para nós, o conteúdo não é relevante se a máquina
 deu erro).
 
-## 5. Enviar para o Github **se estiver correto**:
+## 5. Enviar para o GitHub **se estiver correto**:
 
-Basta adicionar os arquivos da MT e o SVG do diagrama de
-transição e dar o `git push`.
+Basta adicionar os arquivos da MT e dar o `git push`.
 
 ## 6. Repetir para os demais exercícios.
 
@@ -123,6 +117,6 @@ q5 $ q6 $ R   // q5 - início da fita, move para a direita e para
 end           // final da máquina
 ```
 
-Você também pode usar o turing dataviz motificado pelo @guissalustiano 
+Você também pode usar o turing dataviz motificado pelo [@guissalustiano](https://github.com/guissalustiano)
 para gerar esse formato:
-[https://guissalustiano.github.io/turing-machine-viz/](https://guissalustiano.github.io/turing-machine-viz/)
+https://guissalustiano.github.io/turing-machine-viz/
