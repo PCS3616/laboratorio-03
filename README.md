@@ -101,7 +101,8 @@ transição e dar o `git push`.
 
 # Padrão do arquivo da MT:
 Inicia com o prologo, seguido das ações da máquina
-```ATM
+```
+ATM
 PCS 2302/2024 X+Y, soma 2 número unário (formato 1.1)
 1 # $         // alfabeto de entrada: $ é o início da fita, # é o separador
 1 B # $       // alfabeto da fita: B é branco (default)
